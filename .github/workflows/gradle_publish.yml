@@ -21,8 +21,7 @@ jobs:
       - name: 4 - Build
         run: ./gradlew build
       - name: 5 - Capture & upload build artifacts
-        if: ${{ runner.os == 'windows-latest' }}
         uses: actions/upload-artifact@v4
         with:
           name: Artifacts
-          path: build/libs/
+          path: build/libs/*.jar
